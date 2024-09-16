@@ -5,16 +5,16 @@ on:
        - master
 env:
   AWS_REGION: us-east-1
-  ECS_CLUSTER: app_cluster
+  ECS_CLUSTER: app_cluster_prod
   CONTAINER_NAME: app
-  ECS_SERVICE: app_service
+  ECS_SERVICE: app_service_prod
   ECS_TD: .github/workflows/td.json
 
 jobs:
    deploy:
       name: Deploy
       runs-on: ubuntu-latest
-      environment: dev
+      environment: prod
       steps:
        - name: Checkout
          uses: actions/checkout@v3
